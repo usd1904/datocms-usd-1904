@@ -1,12 +1,12 @@
-import Highlighter from '@/components/Common/Highlighter';
+import Highlighter from "@/components/Common/Highlighter";
 import {
   LegalPageModelContentField,
   LegalQuery,
   SiteLocale,
-} from '@/graphql/generated';
-import { isHeading, isParagraph } from 'datocms-structured-text-utils';
-import { notFound } from 'next/navigation';
-import { StructuredText, renderNodeRule } from 'react-datocms';
+} from "@/graphql/generated";
+import { isHeading, isParagraph } from "datocms-structured-text-utils";
+import { notFound } from "next/navigation";
+import { StructuredText, renderNodeRule } from "react-datocms";
 
 type Props = {
   data: LegalQuery;
@@ -31,7 +31,7 @@ const Legal = ({ data, lng }: Props) => {
                     renderNodeRule(isHeading, ({ children, key }) => {
                       return (
                         <h3
-                          className="mb-4 mt-9 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+                          className="mb-4 mt-9 font-bold text-xl text-black dark:text-white sm:text-2xl lg:text-xl xl:text-3xl"
                           key={key}
                         >
                           {children}

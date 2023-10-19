@@ -1,7 +1,7 @@
-import { FeatureRecord } from '@/graphql/generated';
-import { Maybe } from 'graphql/jsutils/Maybe';
-import { Image as DatoImage } from 'react-datocms';
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { FeatureRecord } from "@/graphql/generated";
+import { Maybe } from "graphql/jsutils/Maybe";
+import { Image as DatoImage } from "react-datocms";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 type Props = {
   features: FeatureRecord[];
@@ -18,7 +18,7 @@ const FeatureCards = ({
     <section className="relative">
       {/* Section background (needs .relative class on parent and next sibling elements) */}
       <div
-        className="pointer-events-none absolute inset-0 top-1/2 bg-primary bg-opacity-5 md:mt-24 lg:mt-0"
+        className="pointer-events-none absolute inset-0 top-1/2 bg-black md:mt-24 lg:mt-0"
         aria-hidden="true"
       ></div>
 
@@ -26,11 +26,11 @@ const FeatureCards = ({
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
-            <h1 className="mb-4 text-3xl font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">
+            <h1 className="mb-4 font-bold text-3xl !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">
               {featuresHeader}
             </h1>
             <div className="text-xl text-gray-600">
-              <ReactMarkdown>{featuresSubheader || ''}</ReactMarkdown>
+              <ReactMarkdown>{featuresSubheader || ""}</ReactMarkdown>
             </div>
           </div>
 
@@ -52,12 +52,12 @@ const FeatureCards = ({
                       objectPosition="50% 50%"
                     />
                   </div>
-                  <h4 className="mb-1 text-xl font-bold leading-snug tracking-tight">
+                  <h4 className="mb-1 font-bold text-xl leading-snug tracking-tight">
                     {feature.featureTitle}
                   </h4>
                   <div className="text-center text-gray-600">
                     <ReactMarkdown>
-                      {feature.featureDescription || ''}
+                      {feature.featureDescription || ""}
                     </ReactMarkdown>
                   </div>
                 </div>

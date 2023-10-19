@@ -1,8 +1,8 @@
-import 'node_modules/react-modal-video/css/modal-video.css';
-import '@/styles/global.css';
-import { SiteLocale } from '@/graphql/generated';
-import getAvailableLocales from '@/app/i18n/settings';
-import Head from './[lng]/Head';
+import "node_modules/react-modal-video/css/modal-video.css";
+import "@/styles/global.css";
+import { SiteLocale } from "@/graphql/generated";
+import getAvailableLocales from "@/app/i18n/settings";
+import Head from "./[lng]/Head";
 
 type Params = {
   children: React.ReactNode;

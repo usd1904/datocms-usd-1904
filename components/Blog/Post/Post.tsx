@@ -1,23 +1,23 @@
-import SharePost from '@/components/Blog/Post/SharePost';
-import TagButton from '@/components/Blog/TagButton';
-import QuoteBlock from '@/components/Blog/Post/StructuredTextBlocks/QuoteBlock';
-import transformDate from '@/utils/transformDate';
+import SharePost from "@/components/Blog/Post/SharePost";
+import TagButton from "@/components/Blog/TagButton";
+import QuoteBlock from "@/components/Blog/Post/StructuredTextBlocks/QuoteBlock";
+import transformDate from "@/utils/transformDate";
 import {
   isBlockquote,
   isHeading,
   isLink,
   isParagraph,
-} from 'datocms-structured-text-utils';
+} from "datocms-structured-text-utils";
 import {
   Image as DatoImage,
   StructuredText,
   renderNodeRule,
-} from 'react-datocms';
-import NewsletterCTABlock from '@/components/Blog/Post/StructuredTextBlocks/NewsletterCTABlock';
-import CTABlock from '@/components/Blog/Post/StructuredTextBlocks/CTABlock';
-import DateIcon from '@/components/Blog/svgs/DateIcon';
-import SingleBlog from '@/components/Blog/SingleBlog';
-import Link from 'next/link';
+} from "react-datocms";
+import NewsletterCTABlock from "@/components/Blog/Post/StructuredTextBlocks/NewsletterCTABlock";
+import CTABlock from "@/components/Blog/Post/StructuredTextBlocks/CTABlock";
+import DateIcon from "@/components/Blog/svgs/DateIcon";
+import SingleBlog from "@/components/Blog/SingleBlog";
+import Link from "next/link";
 import {
   AppCtaRecord,
   CtaButtonWithImageRecord,
@@ -27,11 +27,11 @@ import {
   PostRecord,
   ResponsiveImage,
   SiteLocale,
-} from '@/graphql/generated';
-import { notFound } from 'next/navigation';
-import React from 'react';
-import Highlighter from '@/components/Common/Highlighter';
-import CTAAppBlock from './StructuredTextBlocks/CTAAppBlock';
+} from "@/graphql/generated";
+import { notFound } from "next/navigation";
+import React from "react";
+import Highlighter from "@/components/Common/Highlighter";
+import CTAAppBlock from "./StructuredTextBlocks/CTAAppBlock";
 
 type Props = {
   data: PostQuery;
@@ -46,7 +46,7 @@ const Post = ({ data, lng }: Props) => {
         <div className="-mx-4 flex flex-wrap justify-center">
           <div className="w-full px-4 lg:w-8/12">
             <div>
-              <h2 className="mb-8 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
+              <h2 className="mb-8 font-bold text-3xl leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
                 {data.post.title}
               </h2>
               <div className="mb-10 flex items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
@@ -99,7 +99,7 @@ const Post = ({ data, lng }: Props) => {
                   renderNode={Highlighter}
                   renderBlock={({ record }: any) => {
                     switch (record.__typename) {
-                      case 'ImageBlockRecord':
+                      case "ImageBlockRecord":
                         const ImageBlockRecord = record as ImageBlockRecord;
                         return (
                           <div className="relative mb-16 mt-16 overflow-hidden rounded-md shadow-md sm:h-[300px] md:h-[400px]">
@@ -111,7 +111,7 @@ const Post = ({ data, lng }: Props) => {
                             />
                           </div>
                         );
-                      case 'NewsletterSubscriptionRecord':
+                      case "NewsletterSubscriptionRecord":
                         const NewsletterSubscriptionRecord =
                           record as NewsletterSubscriptionRecord;
                         return (
@@ -123,7 +123,7 @@ const Post = ({ data, lng }: Props) => {
                             }
                           />
                         );
-                      case 'CtaButtonWithImageRecord':
+                      case "CtaButtonWithImageRecord":
                         const CtaButtonWithImageRecord =
                           record as CtaButtonWithImageRecord;
                         return (
@@ -134,7 +134,7 @@ const Post = ({ data, lng }: Props) => {
                             image={CtaButtonWithImageRecord.image}
                           />
                         );
-                      case 'AppCtaRecord':
+                      case "AppCtaRecord":
                         const appCtaRecord = record as AppCtaRecord;
                         return (
                           <CTAAppBlock
@@ -154,7 +154,7 @@ const Post = ({ data, lng }: Props) => {
                     transformedMeta,
                   }) => {
                     switch (record.__typename) {
-                      case 'PostRecord':
+                      case "PostRecord":
                         return (
                           <Link
                             {...transformedMeta}
@@ -170,7 +170,7 @@ const Post = ({ data, lng }: Props) => {
                   }}
                   renderInlineRecord={({ record }) => {
                     switch (record.__typename) {
-                      case 'PostRecord':
+                      case "PostRecord":
                         const PostRecord = record as PostRecord;
                         return (
                           <Link
@@ -189,7 +189,7 @@ const Post = ({ data, lng }: Props) => {
                     renderNodeRule(isHeading, ({ children, key }) => {
                       return (
                         <h3
-                          className="mb-4 mt-9 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+                          className="mb-4 mt-9 font-bold text-xl text-black dark:text-white sm:text-2xl lg:text-xl xl:text-3xl"
                           key={key}
                         >
                           {children}

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { SiteLocale } from '@/graphql/generated';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import AuthenticationModal from '../Header/AuthenticationModal';
-import SuccessPopUp from '../Header/SuccessPopUp';
+import { SiteLocale } from "@/graphql/generated";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import AuthenticationModal from "../Header/AuthenticationModal";
+import SuccessPopUp from "../Header/SuccessPopUp";
 
 type Props = {
   lng: SiteLocale;
@@ -20,7 +20,7 @@ export default function ScrollToTop({ lng, isDraft }: Props) {
 
   async function toggleDraft() {
     if (isDraft) {
-      await fetch('/api/draft/disable');
+      await fetch("/api/draft/disable");
       router.refresh();
     } else setModalOpen(true);
   }
@@ -41,9 +41,9 @@ export default function ScrollToTop({ lng, isDraft }: Props) {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
 
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   return (
@@ -87,12 +87,6 @@ export default function ScrollToTop({ lng, isDraft }: Props) {
                 </motion.div>
               )}
             </AnimatePresence>
-            <div
-              onClick={toggleDraft}
-              className="flex cursor-pointer items-center justify-center rounded-md bg-primary p-4 font-bold text-white shadow-md transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp"
-            >
-              {isDraft ? 'Enter Published Mode' : 'Enter Draft Mode'}
-            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -31,6 +31,16 @@ query Menu($locale: SiteLocale, $fallbackLocale: [SiteLocale!]) {
         }
       }
     }
+    socialMediaLinks {
+      url
+      name
+      id
+      icon {
+        url
+        height
+        width
+      }
+    }
     notification {
       value
     }

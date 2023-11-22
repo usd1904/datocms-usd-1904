@@ -39,7 +39,7 @@ const DetailSection = ({ details, image, imagePosition }: Props) => {
         <div className="-mx-4 flex flex-col items-center justify-center lg:flex-row lg:flex-wrap ">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             {!imagePosition && image.responsiveImage && (
-              <div className="relative h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
+              <div className="relative h-64 overflow-hidden bg-gray-100 md:h-auto">
                 <DatoImage
                   className="h-full w-full object-cover object-center"
                   layout="fill"
@@ -79,9 +79,9 @@ const DetailSection = ({ details, image, imagePosition }: Props) => {
                       return (
                         <div
                           key={key}
-                          className="mb-5 flex items-center text-lg font-medium text-body-color"
+                          className="mb-5 flex items-center gap-2 text-lg font-medium text-body-color"
                         >
-                          <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
+                          <span className="flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
                             {checkIcon}
                           </span>
                           <div>{children}</div>
@@ -92,7 +92,7 @@ const DetailSection = ({ details, image, imagePosition }: Props) => {
                       return (
                         <div
                           key={key}
-                          className="mb-6 mt-6 grid w-full grid-cols-2 gap-4 text-center lg:ml-0"
+                          className="mb-6 mt-6 grid w-full grid-cols-2 gap-4 px-8 text-center lg:ml-0"
                         >
                           {children}
                         </div>
@@ -103,7 +103,7 @@ const DetailSection = ({ details, image, imagePosition }: Props) => {
               </div>
             </div>
             {imagePosition && image.responsiveImage && (
-              <div className="relative h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
+              <div className="relative h-64 overflow-hidden bg-gray-100 md:h-auto">
                 <DatoImage
                   className="h-full w-full object-cover"
                   layout="fill"

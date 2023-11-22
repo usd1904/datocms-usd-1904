@@ -87,6 +87,7 @@ query Page($locale: SiteLocale, $fallbackLocale: [SiteLocale!], $slug: String) {
           label
           primary
           url
+          targetBlank
         }
         _modelApiKey
         id

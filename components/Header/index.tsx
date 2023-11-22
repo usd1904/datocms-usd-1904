@@ -107,7 +107,7 @@ const Header = ({ lng, data }: Props) => {
               <Link
                 href={"/" + lng}
                 className={`header-logo block w-full ${
-                  sticky ? "py-5 lg:py-2" : "py-8"
+                  sticky ? "py-2" : "py-4"
                 } `}
               >
                 {data.layout?.logo.url && (
@@ -201,7 +201,7 @@ const Header = ({ lng, data }: Props) => {
                   </ul>
                 </nav>
               </div>
-              <div className="flex items-center justify-center md:justify-start">
+              <div className="hidden items-center justify-center md:flex md:justify-start md:pr-20 lg:pr-0">
                 {data.layout!.socialMediaLinks.map((socialMedia) => {
                   return (
                     <a

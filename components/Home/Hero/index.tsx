@@ -62,6 +62,7 @@ const Hero = ({ heroTitle, heroSubtitle, buttons }: Props) => {
                           (button.primary ? primary : secondary)
                         }
                         id={button.id}
+                        target={button.targetBlank ? "_blank" : ""}
                       >
                         {button.label}
                       </Link>

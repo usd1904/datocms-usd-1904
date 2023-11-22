@@ -56,24 +56,57 @@ const Footer = ({ data, lng }: Props) => {
             </div>
           </div>
 
+          <div className="flex w-full text-white md:text-end">
+            <div className="w-full">
+              <div className="mb-12 lg:mb-16">
+                <h2 className="mb-10 font-bold text-xl uppercase tracking-widest">
+                  Contatti
+                </h2>
+                <ul>
+                  <li>
+                    <a
+                      href="tel:+393333333333"
+                      className="mb-4 inline-block font-bold text-base tracking-widest text-white underline hover:text-yellow"
+                    >
+                      Telefono: 3333333333
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:info@millenovecentoquattro.it"
+                      className="mb-4 inline-block font-bold text-base tracking-widest text-white underline hover:text-yellow"
+                    >
+                      info@millenovecentoquattro.it
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <div className="flex w-full md:text-end">
             <div className="w-full">
               <div className="mb-12 lg:mb-16">
-                <h2 className="mb-10 font-bold text-xl text-white">Legal</h2>
+                <h2 className="mb-10 font-bold text-xl uppercase tracking-widest text-white">
+                  Legal
+                </h2>
                 <ul>
-                  {data.layout!.footerLinks.map((link) => {
-                    const pageLink = link as LegalPageRecord; // The field has a "at least one" validation
-                    return (
-                      <li key={pageLink.id}>
-                        <a
-                          href={"/" + lng + "/legal/" + pageLink.slug}
-                          className="mb-4 inline-block text-base font-medium text-white hover:text-yellow"
-                        >
-                          {pageLink.title}{" "}
-                        </a>
-                      </li>
-                    );
-                  })}
+                  <li>
+                    <a
+                      href="#"
+                      className="mb-4 inline-block font-bold text-base tracking-widest text-white underline hover:text-yellow"
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="mb-4 inline-block font-bold text-base tracking-widest text-white underline hover:text-yellow"
+                    >
+                      Cookie Policy
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

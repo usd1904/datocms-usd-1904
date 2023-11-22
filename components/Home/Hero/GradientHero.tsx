@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { ButtonRecord } from '@/graphql/generated';
-import { Maybe } from 'graphql/jsutils/Maybe';
-import Link from 'next/link';
-import { delay, motion } from 'framer-motion';
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { ButtonRecord } from "@/graphql/generated";
+import { Maybe } from "graphql/jsutils/Maybe";
+import Link from "next/link";
+import { delay, motion } from "framer-motion";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 type Props = {
   heroTitle: string;
@@ -61,22 +61,20 @@ const GradientHero = ({ heroTitle, heroSubtitle, buttons }: Props) => {
         {/* Hero content */}
         <div className="pb-12 pt-32 md:pb-20 md:pt-40">
           <div className="pb-12 text-center md:pb-16">
-            <h1
-              className="leading-tighter mb-4 text-6xl font-extrabold tracking-tighter md:text-8xl"
+            <div
+              className="leading-tighter mb-4 font-sans text-6xl font-extrabold uppercase tracking-widest md:text-8xl"
               data-aos="zoom-y-out"
             >
-              {heroTitleWords.join(' ')}{' '}
-              <span className="bg-gradient-to-r from-primary to-teal-400 bg-clip-text text-transparent">
-                {lastWord}
-              </span>
-            </h1>
+              {heroTitleWords.join(" ")}{" "}
+              <span className="text-yellow">{lastWord}</span>
+            </div>
             <div className="mx-auto max-w-3xl">
               <div
                 className="mb-8 text-xl text-gray-600"
                 data-aos="zoom-y-out"
                 data-aos-delay="150"
               >
-                <ReactMarkdown>{heroSubtitle || ''}</ReactMarkdown>
+                <ReactMarkdown>{heroSubtitle || ""}</ReactMarkdown>
               </div>
               <div
                 className="mx-auto flex max-w-xs flex-col justify-center sm:max-w-none sm:flex-row"
@@ -85,14 +83,14 @@ const GradientHero = ({ heroTitle, heroSubtitle, buttons }: Props) => {
               >
                 {buttons.map((button) => {
                   const primary =
-                    'mb-4 w-full cursor-pointer rounded-lg bg-gradient-to-r from-primary to-teal-400 p-4 text-xl font-bold text-white transition-all hover:opacity-80 sm:mb-0 sm:w-auto';
+                    "mb-4 w-full cursor-pointer rounded-lg bg-black from-primary to-teal-400 p-4 text-xl font-bold text-white transition-all hover:bg-yellow uppercase sm:mb-0 sm:w-auto";
                   const secondary =
-                    'btn -md w-full cursor-pointer rounded bg-gray-900 p-4 text-xl text-white transition-all hover:bg-gray-700 sm:ml-4 sm:w-auto';
+                    "btn -md w-full cursor-pointer rounded bg-gray-900 p-4 text-xl text-white transition-all hover:bg-gray-700 sm:ml-4 sm:w-auto";
 
                   return (
                     <Link
                       key={button.id}
-                      href={button.url || '#'}
+                      href={button.url || "#"}
                       className={button.primary ? primary : secondary}
                       id={button.id}
                     >

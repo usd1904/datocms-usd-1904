@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
 import {
   AboutIntroModelIntroductionTextField,
   ImageFileField,
-} from '@/graphql/generated';
-import { isHeading, isParagraph } from 'datocms-structured-text-utils';
-import { Maybe } from 'graphql/jsutils/Maybe';
+} from "@/graphql/generated";
+import { isHeading, isParagraph } from "datocms-structured-text-utils";
+import { Maybe } from "graphql/jsutils/Maybe";
 import {
   Image as DatoImage,
   ResponsiveImageType,
   StructuredText,
   renderNodeRule,
-} from 'react-datocms';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
-import React from 'react';
-import Highlighter from '../Common/Highlighter';
+} from "react-datocms";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import React from "react";
+import Highlighter from "../Common/Highlighter";
 
 type Props = {
   header: string;
@@ -33,13 +33,13 @@ const AboutIntro = ({
   preHeader,
 }: Props) => {
   let [firstWord, ...restOfTheStringArray] = header.split(/\s+/);
-  const restOfTheString = restOfTheStringArray.join(' ');
+  const restOfTheString = restOfTheStringArray.join(" ");
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '600%']);
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "600%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div className="mx-auto mt-16 px-4 py-12 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20">
+    <div className="mx-auto mt-16 px-4 py-12 sm:max-w-xl md:max-w-full md:px-24 lg:mt-20 lg:max-w-screen-xl lg:px-8 lg:py-28">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -51,44 +51,18 @@ const AboutIntro = ({
             {preHeader}
           </p>
         </div>
-        <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-          <span className="relative inline-block text-primary">
-            <motion.svg
-              style={{ y, x }}
-              viewBox="0 0 52 24"
-              fill="currentColor"
-              className="text-blue-gray-100 absolute left-0 top-0 z-0 -ml-20 -mt-8 hidden w-32 sm:block lg:-ml-28 lg:-mt-10 lg:w-32"
-            >
-              <defs>
-                <pattern
-                  id="2feffae2-9edf-414e-ab8c-f0e6396a0fc1"
-                  x="0"
-                  y="0"
-                  width=".135"
-                  height=".30"
-                >
-                  <circle cx="1" cy="1" r=".7" />
-                </pattern>
-              </defs>
-              <rect
-                fill="url(#2feffae2-9edf-414e-ab8c-f0e6396a0fc1)"
-                width="52"
-                height="24"
-              />
-            </motion.svg>
-            <span className="relative text-gray-700">{firstWord}</span>
-          </span>{' '}
+        <h2 className="mb-6 mt-3 max-w-lg font-bold font-sans text-3xl uppercase leading-none tracking-widest text-gray-900 sm:text-4xl md:mx-auto">
           {restOfTheString}
         </h2>
         <div className="text-base text-gray-700 md:text-lg">
-          <ReactMarkdown>{subheader || ''}</ReactMarkdown>
+          <ReactMarkdown>{subheader || ""}</ReactMarkdown>
         </div>
       </motion.div>
       <div className="grid max-w-screen-lg gap-8 sm:mx-auto lg:grid-cols-2">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ ease: 'easeOut', duration: 0.5, delay: 0.6 }}
+          transition={{ ease: "easeOut", duration: 0.5, delay: 0.6 }}
           className="grid grid-cols-2 gap-5 shadow-2xl drop-shadow-2xl"
         >
           <div className="relative z-50 col-span-2 h-56 w-full rounded object-cover shadow-lg">
@@ -129,7 +103,7 @@ const AboutIntro = ({
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ ease: 'easeOut', duration: 0.3, delay: 1 }}
+          transition={{ ease: "easeOut", duration: 0.3, delay: 1 }}
           className="z-0 flex flex-col justify-center"
         >
           {introduction && (
@@ -139,7 +113,7 @@ const AboutIntro = ({
                 renderNodeRule(isHeading, ({ children, key }) => {
                   return (
                     <h3
-                      className="mb-2 mt-4 text-lg font-semibold leading-5"
+                      className="mb-2 mt-4 font-bold text-lg leading-5 tracking-wider"
                       key={key}
                     >
                       {children}

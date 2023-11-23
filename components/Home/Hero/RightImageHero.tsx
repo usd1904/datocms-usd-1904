@@ -20,18 +20,15 @@ const RightImageHero = ({ heroTitle, heroSubtitle, buttons, image }: Props) => {
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <section className="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
           <div className="flex flex-col items-start sm:text-center lg:w-1/2 lg:py-12 lg:text-left xl:py-24">
-            <h1 className="mx-auto mb-8 block font-bold text-4xl uppercase text-black md:mb-12 lg:ml-0">
-              associazione
-              <span className="block font-sans text-6xl tracking-widest md:pt-2 xl:text-7xl">
+            <h1 className="mb-8 block text-3xl font-medium uppercase text-black md:mx-auto md:mb-12 lg:ml-0">
+              USD
+              <span className="block font-bold font-sans text-5xl tracking-widest md:pt-2 xl:text-7xl">
                 mille
               </span>
-              <span className="block font-sans text-6xl tracking-widest text-yellow xl:text-7xl">
-                nove
+              <span className="block font-bold font-sans text-5xl tracking-widest text-yellow xl:text-7xl">
+                novecento
               </span>
-              <span className="block font-sans text-6xl tracking-widest xl:text-7xl">
-                cento
-              </span>
-              <span className="block font-sans text-6xl tracking-widest text-yellow xl:text-7xl">
+              <span className="block font-bold font-sans text-5xl tracking-widest xl:text-7xl">
                 quattro
               </span>
             </h1>
@@ -60,7 +57,7 @@ const RightImageHero = ({ heroTitle, heroSubtitle, buttons, image }: Props) => {
           </div>
 
           {image && image.responsiveImage && (
-            <div className="relative w-3/5 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto">
+            <div className="lf:mt-0 relative mt-8 h-80 w-full overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto lg:w-3/5">
               <DatoImage
                 data={image.responsiveImage}
                 layout="fill"

@@ -63,18 +63,13 @@ const Footer = ({ data, lng }: Props) => {
                   Contatti
                 </h2>
                 <ul>
-                  <li>
-                    <a
-                      href="tel:+393333333333"
-                      className="mb-4 inline-block font-bold text-base tracking-widest text-white underline hover:text-yellow"
-                    >
-                      Telefono: 3333333333
-                    </a>
+                  <li className="mb-4 inline-block text-base tracking-wider text-white hover:text-yellow">
+                    Telefono: 3333333333
                   </li>
                   <li>
                     <a
                       href="mailto:info@millenovecentoquattro.it"
-                      className="mb-4 inline-block font-bold text-base tracking-widest text-white underline hover:text-yellow"
+                      className="mb-4 inline-block text-base tracking-wider text-white underline hover:text-yellow"
                     >
                       info@millenovecentoquattro.it
                     </a>
@@ -94,7 +89,7 @@ const Footer = ({ data, lng }: Props) => {
                   <li>
                     <a
                       href="#"
-                      className="mb-4 inline-block font-bold text-base tracking-widest text-white underline hover:text-yellow"
+                      className="mb-4 inline-block text-base tracking-wider text-white underline hover:text-yellow"
                     >
                       Privacy Policy
                     </a>
@@ -102,7 +97,7 @@ const Footer = ({ data, lng }: Props) => {
                   <li>
                     <a
                       href="#"
-                      className="mb-4 inline-block font-bold text-base tracking-widest text-white underline hover:text-yellow"
+                      className="mb-4 inline-block text-base tracking-wider text-white underline hover:text-yellow"
                     >
                       Cookie Policy
                     </a>

@@ -305,64 +305,63 @@ export default function Section({ sections, locale, posts, postMeta }: Props) {
           case "featured_posts_section":
             const featuredPostsSectionRecord =
               section as FeaturedPostsSectionRecord;
-          // switch (featuredPostsSectionRecord.displayOptions) {
-          //   case "modern_cards":
-          //     return (
-          //       <ModernPostCards
-          //         locale={locale}
-          //         blogData={featuredPostsSectionRecord.featuredPosts}
-          //         blogHeader={featuredPostsSectionRecord.featuredPostsHeader}
-          //         blogSubheader={
-          //           featuredPostsSectionRecord.featuredPostsSubheader
-          //         }
-          //       />
-          //     );
-          //   case "carrousel":
-          //     return (
-          //       <CarrouselFeaturedPosts
-          //         locale={locale}
-          //         blogData={featuredPostsSectionRecord.featuredPosts}
-          //         blogHeader={featuredPostsSectionRecord.featuredPostsHeader}
-          //         blogSubheader={
-          //           featuredPostsSectionRecord.featuredPostsSubheader
-          //         }
-          //       />
-          //     );
-          //   case "minimalist_grid":
-          //     return (
-          //       <MinimalistFeaturedPostsGrid
-          //         locale={locale}
-          //         blogData={featuredPostsSectionRecord.featuredPosts}
-          //         blogHeader={featuredPostsSectionRecord.featuredPostsHeader}
-          //         blogSubheader={
-          //           featuredPostsSectionRecord.featuredPostsSubheader
-          //         }
-          //       />
-          //     );
-          //   case "full_image_card":
-          //     return (
-          //       <FullImageFeaturedPosts
-          //         locale={locale}
-          //         blogData={featuredPostsSectionRecord.featuredPosts}
-          //         blogHeader={featuredPostsSectionRecord.featuredPostsHeader}
-          //         blogSubheader={
-          //           featuredPostsSectionRecord.featuredPostsSubheader
-          //         }
-          //       />
-          //     );
-          //   default:
-          //     return (
-          //       <Blog
-          //         locale={locale}
-          //         posts={posts}
-          //         blogData={featuredPostsSectionRecord.featuredPosts}
-          //         blogHeader={featuredPostsSectionRecord.featuredPostsHeader}
-          //         blogSubheader={
-          //           featuredPostsSectionRecord.featuredPostsSubheader
-          //         }
-          //       />
-          //     );
-          // }
+            switch (featuredPostsSectionRecord.displayOptions) {
+              // case 'modern_cards':
+              //   return (
+              //     <ModernPostCards
+              //       locale={locale}
+              //       blogData={featuredPostsSectionRecord.featuredPosts}
+              //       blogHeader={featuredPostsSectionRecord.featuredPostsHeader}
+              //       blogSubheader={
+              //         featuredPostsSectionRecord.featuredPostsSubheader
+              //       }
+              //     />
+              //   );
+              // case 'carrousel':
+              //   return (
+              //     <CarrouselFeaturedPosts
+              //       locale={locale}
+              //       blogData={featuredPostsSectionRecord.featuredPosts}
+              //       blogHeader={featuredPostsSectionRecord.featuredPostsHeader}
+              //       blogSubheader={
+              //         featuredPostsSectionRecord.featuredPostsSubheader
+              //       }
+              //     />
+              //   );
+              // case 'minimalist_grid':
+              //   return (
+              //     <MinimalistFeaturedPostsGrid
+              //       locale={locale}
+              //       blogData={featuredPostsSectionRecord.featuredPosts}
+              //       blogHeader={featuredPostsSectionRecord.featuredPostsHeader}
+              //       blogSubheader={
+              //         featuredPostsSectionRecord.featuredPostsSubheader
+              //       }
+              //     />
+              //   );
+              // case 'full_image_card':
+              //   return (
+              //     <FullImageFeaturedPosts
+              //       locale={locale}
+              //       blogData={featuredPostsSectionRecord.featuredPosts}
+              //       blogHeader={featuredPostsSectionRecord.featuredPostsHeader}
+              //       blogSubheader={
+              //         featuredPostsSectionRecord.featuredPostsSubheader
+              //       }
+              //     />
+              //   );
+              default:
+                return (
+                  <Blog
+                    locale={locale}
+                    posts={posts}
+                    blogHeader={featuredPostsSectionRecord.featuredPostsHeader}
+                    blogSubheader={
+                      featuredPostsSectionRecord.featuredPostsSubheader
+                    }
+                  />
+                );
+            }
 
           case "team_section":
             const teamSectionRecord = section as TeamSectionRecord;

@@ -4,20 +4,13 @@ import SingleBlog from "./SingleBlog";
 import { Maybe } from "graphql/jsutils/Maybe";
 
 type BlogProps = {
-  blogData: PostRecord[];
   blogHeader: string;
   blogSubheader: Maybe<string>;
   locale: SiteLocale;
-  posts: any;
+  posts: PostRecord[];
 };
 
-const Blog = ({
-  blogData,
-  blogHeader,
-  blogSubheader,
-  locale,
-  posts,
-}: BlogProps) => {
+const Blog = ({ blogHeader, blogSubheader, locale, posts }: BlogProps) => {
   return (
     <section
       id="blog"

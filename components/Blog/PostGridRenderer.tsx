@@ -2,9 +2,9 @@ import {
   CollectionMetadata,
   PostRecord,
   SiteLocale,
-} from '@/graphql/generated';
-import PageIndicatorList from './PageIndicatorList';
-import SingleBlog from './SingleBlog';
+} from "@/graphql/generated";
+import PageIndicatorList from "./PageIndicatorList";
+import SingleBlog from "./SingleBlog";
 
 type Props = {
   data: PostRecord[];
@@ -15,6 +15,11 @@ type Props = {
 const PostGridRenderer = ({ data, lng, postMeta }: Props) => {
   return (
     <section className="mt-4 pb-[120px] pt-[120px]">
+      <div className="width-full flex items-center justify-center gap-4">
+        <h1 className="my-12 text-center font-sans text-2xl font-semibold uppercase tracking-widest text-gray-800 dark:text-white lg:text-4xl">
+          Blog
+        </h1>
+      </div>
       <div className="container">
         <div className="-mx-4 flex flex-wrap justify-center">
           {data.map((post) => (

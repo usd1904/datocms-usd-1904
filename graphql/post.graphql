@@ -6,26 +6,6 @@ query Post($slug: String, $locale: SiteLocale, $fallbackLocale: [SiteLocale!]) {
   ) {
     _publishedAt
     title
-    author {
-      name
-      bio
-      slug
-      picture {
-        responsiveImage(imgixParams: { w: "64", h: "64", fit: crop }) {
-          srcSet
-          webpSrcSet
-          sizes
-          src
-          width
-          height
-          aspectRatio
-          alt
-          title
-          bgColor
-          base64
-        }
-      }
-    }
     tags {
       id
       tag
@@ -46,25 +26,6 @@ query Post($slug: String, $locale: SiteLocale, $fallbackLocale: [SiteLocale!]) {
           description
           image {
             responsiveImage {
-              srcSet
-              webpSrcSet
-              sizes
-              src
-              width
-              height
-              aspectRatio
-              alt
-              title
-              bgColor
-              base64
-            }
-          }
-        }
-        author {
-          name
-          bio
-          picture {
-            responsiveImage(imgixParams: { w: "64", h: "64", fit: crop }) {
               srcSet
               webpSrcSet
               sizes
@@ -100,20 +61,22 @@ query Post($slug: String, $locale: SiteLocale, $fallbackLocale: [SiteLocale!]) {
             }
           }
         }
-        ... on AppCtaRecord {
+        ... on VideoSectionRecord {
+          _modelApiKey
           id
           __typename
-          text
-          title
-          googlePlayUrl
-          appstoreUrl
-        }
-        ... on NewsletterSubscriptionRecord {
-          id
-          __typename
-          buttonLabel
-          subtitle
-          title
+          videoHeader
+          videoSubheader
+          video {
+            providerUid
+            provider
+            thumbnailUrl
+          }
+          videoThumbnail {
+            responsiveImage {
+              ...DatoImage_responsiveImage
+            }
+          }
         }
         ... on CtaButtonWithImageRecord {
           id

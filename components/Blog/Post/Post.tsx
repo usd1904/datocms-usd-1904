@@ -1,5 +1,3 @@
-import SharePost from "@/components/Blog/Post/SharePost";
-import TagButton from "@/components/Blog/TagButton";
 import QuoteBlock from "@/components/Blog/Post/StructuredTextBlocks/QuoteBlock";
 import transformDate from "@/utils/transformDate";
 import {
@@ -13,25 +11,20 @@ import {
   StructuredText,
   renderNodeRule,
 } from "react-datocms";
-import NewsletterCTABlock from "@/components/Blog/Post/StructuredTextBlocks/NewsletterCTABlock";
 import CTABlock from "@/components/Blog/Post/StructuredTextBlocks/CTABlock";
-import DateIcon from "@/components/Blog/svgs/DateIcon";
-import SingleBlog from "@/components/Blog/SingleBlog";
 import Link from "next/link";
 import {
-  AppCtaRecord,
+  VideoSectionRecord,
   CtaButtonWithImageRecord,
   ImageBlockRecord,
-  NewsletterSubscriptionRecord,
   PostQuery,
   PostRecord,
-  ResponsiveImage,
   SiteLocale,
 } from "@/graphql/generated";
 import { notFound } from "next/navigation";
 import React from "react";
 import Highlighter from "@/components/Common/Highlighter";
-import CTAAppBlock from "./StructuredTextBlocks/CTAAppBlock";
+import Video from "@/components/Home/Video";
 
 type Props = {
   data: PostQuery;
@@ -46,39 +39,14 @@ const Post = ({ data, lng }: Props) => {
         <div className="-mx-4 flex flex-wrap justify-center">
           <div className="w-full px-4 lg:w-8/12">
             <div>
-              <h2 className="mb-8 font-bold text-3xl leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
+              <h2 className="mb-8 font-bold font-sans text-3xl uppercase leading-tight tracking-widest text-black dark:text-white sm:text-4xl sm:leading-tight xl:text-5xl">
                 {data.post.title}
               </h2>
               <div className="mb-10 flex items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
                 <div className="flex flex-col items-start md:flex-row md:items-center">
-                  <Link
-                    href={`/${lng}/posts/author/${data.post.author.slug}`}
-                    className="mb-5 mr-10 flex items-center"
-                  >
-                    <div className="mr-4">
-                      <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                        <DatoImage
-                          className="h-full w-full object-cover"
-                          data={
-                            data.post.author.picture
-                              .responsiveImage as ResponsiveImage
-                          }
-                        />
-                      </div>
-                    </div>
-                    <div className="w-full">
-                      <h4 className="mb-1 text-base font-medium text-body-color">
-                        <span>{data.post.author.name}</span>
-                      </h4>
-                      <p className="text-xs text-body-color">
-                        {data.post.author.bio}
-                      </p>
-                    </div>
-                  </Link>
                   {data.post._publishedAt && (
                     <div className="mb-5 flex items-center">
                       <p className="mr-5 flex items-center text-base font-medium text-body-color">
-                        {DateIcon}
                         {transformDate(data.post._publishedAt)}
                       </p>
                     </div>
@@ -87,7 +55,7 @@ const Post = ({ data, lng }: Props) => {
                 <div className="mb-5">
                   <a
                     href={`/${lng}/posts/tag/${data.post.tags[0].slug}`}
-                    className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white"
+                    className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white"
                   >
                     {data.post.tags[0].tag}
                   </a>
@@ -111,18 +79,6 @@ const Post = ({ data, lng }: Props) => {
                             />
                           </div>
                         );
-                      case "NewsletterSubscriptionRecord":
-                        const NewsletterSubscriptionRecord =
-                          record as NewsletterSubscriptionRecord;
-                        return (
-                          <NewsletterCTABlock
-                            title={NewsletterSubscriptionRecord.title}
-                            subtitle={NewsletterSubscriptionRecord.subtitle}
-                            buttonLabel={
-                              NewsletterSubscriptionRecord.buttonLabel
-                            }
-                          />
-                        );
                       case "CtaButtonWithImageRecord":
                         const CtaButtonWithImageRecord =
                           record as CtaButtonWithImageRecord;
@@ -134,14 +90,15 @@ const Post = ({ data, lng }: Props) => {
                             image={CtaButtonWithImageRecord.image}
                           />
                         );
-                      case "AppCtaRecord":
-                        const appCtaRecord = record as AppCtaRecord;
+                      case "VideoSectionRecord":
+                        const videoSectionRecord = record as VideoSectionRecord;
                         return (
-                          <CTAAppBlock
-                            title={appCtaRecord.title}
-                            text={appCtaRecord.text}
-                            googleURL={appCtaRecord.googlePlayUrl}
-                            appleURL={appCtaRecord.appstoreUrl}
+                          <Video
+                            videoHeader={videoSectionRecord.videoHeader}
+                            videoSubheader={videoSectionRecord.videoSubheader}
+                            videoUid={videoSectionRecord.video?.providerUid}
+                            videoThumbnail={videoSectionRecord.videoThumbnail}
+                            videoProvider={videoSectionRecord.video?.provider}
                           />
                         );
                       default:
@@ -229,7 +186,7 @@ const Post = ({ data, lng }: Props) => {
                     }),
                   ]}
                 />
-                <div className="mt-16 items-center justify-between sm:flex">
+                {/* <div className="mt-16 items-center justify-between sm:flex">
                   <div className="mb-5">
                     <h5 className="mb-3 text-sm font-medium text-body-color">
                       Post Tags :
@@ -255,7 +212,7 @@ const Post = ({ data, lng }: Props) => {
                       <SharePost />
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

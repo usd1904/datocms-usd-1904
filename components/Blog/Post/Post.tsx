@@ -61,7 +61,7 @@ const Post = ({ data, lng }: Props) => {
                   </a>
                 </div>
               </div>
-              <div>
+              <div className="prose">
                 <StructuredText
                   data={data.post.content as any}
                   renderNode={Highlighter}

@@ -53,3 +53,7 @@
     @apply opacity-100;
   }
 }
+
+.prose ul {
+  @apply my-2 translate-x-3.5 list-disc;
+}

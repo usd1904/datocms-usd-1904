@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Landing page DatoCMS Starter</title>
+      <title>USD millenovecentoquattro</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta
         name="description"

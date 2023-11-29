@@ -18,7 +18,7 @@ type Props = {
 
 const Footer = ({ data, lng }: Props) => {
   return (
-    <footer className="color-white relative z-10 mx-auto flex w-full flex-col items-center justify-center bg-black pt-16 text-center md:text-start lg:pt-24">
+    <footer className="color-white relative z-10 mx-auto flex w-full flex-col items-center justify-center border-t-2 border-white bg-black pt-16 text-center md:text-start lg:pt-24">
       <div className="container w-full">
         <div className="flex w-full flex-col justify-between md:flex-row md:px-16">
           <div className="w-full">
@@ -60,12 +60,9 @@ const Footer = ({ data, lng }: Props) => {
             <div className="w-full">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 font-bold text-xl uppercase tracking-widest">
-                  Contatti
+                  Email
                 </h2>
                 <ul>
-                  <li className="mb-4 inline-block text-base tracking-wider text-white hover:text-yellow">
-                    Telefono: 3333333333
-                  </li>
                   <li>
                     <a
                       href="mailto:info@millenovecentoquattro.it"

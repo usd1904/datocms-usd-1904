@@ -124,6 +124,7 @@ export default function Section({ sections, locale, posts, postMeta }: Props) {
                     heroTitle={heroSectionRecord.heroTitle}
                     heroSubtitle={heroSectionRecord.heroSubtitle}
                     buttons={heroSectionRecord.buttons}
+                    align={heroSectionRecord.align}
                   />
                 );
             }

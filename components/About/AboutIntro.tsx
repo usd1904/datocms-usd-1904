@@ -47,10 +47,15 @@ const AboutIntro = ({
         className="mb-10 max-w-xl sm:text-center md:mx-auto md:mb-12 lg:max-w-2xl"
       >
         <div>
-          <p className="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px text-xs font-semibold uppercase tracking-wider text-primary ">
+          <p className="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px text-sm font-semibold uppercase tracking-wider text-primary ">
             {preHeader}
           </p>
         </div>
+        {header && (
+          <h1 className="mt-2 font-bold font-sans text-3xl uppercase tracking-widest xl:text-5xl">
+            {header}
+          </h1>
+        )}
         <h2 className="mb-6 mt-3 max-w-lg font-bold font-sans text-3xl uppercase leading-none tracking-widest text-gray-900 sm:text-4xl md:mx-auto">
           {restOfTheString}
         </h2>
@@ -113,7 +118,7 @@ const AboutIntro = ({
                 renderNodeRule(isHeading, ({ children, key }) => {
                   return (
                     <h3
-                      className="mb-2 mt-4 font-bold text-lg leading-5 tracking-wider"
+                      className="mb-2 mt-4 font-bold font-sans text-lg uppercase leading-5 tracking-widest xl:text-xl"
                       key={key}
                     >
                       {children}
@@ -122,7 +127,10 @@ const AboutIntro = ({
                 }),
                 renderNodeRule(isParagraph, ({ children, key }) => {
                   return (
-                    <div className="mb-4 text-sm text-body-color" key={key}>
+                    <div
+                      className="mb-4 text-sm text-body-color xl:text-base"
+                      key={key}
+                    >
                       {children}
                     </div>
                   );

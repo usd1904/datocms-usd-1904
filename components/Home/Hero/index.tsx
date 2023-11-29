@@ -10,11 +10,12 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 type Props = {
   heroTitle: string;
-  heroSubtitle: Maybe<string>;
+  heroSubtitle: any;
   buttons: ButtonRecord[];
+  align: boolean;
 };
 
-const Hero = ({ heroTitle, heroSubtitle, buttons }: Props) => {
+const Hero = ({ heroTitle, heroSubtitle, buttons, align }: Props) => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
 
@@ -27,17 +28,21 @@ const Hero = ({ heroTitle, heroSubtitle, buttons }: Props) => {
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="mx-auto max-w-[800px] text-center">
+              <div
+                className={`${
+                  align ? "text-left" : "text-center"
+                } mx-auto max-w-[800px]`}
+              >
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  <h2 className="mb-5 font-bold text-3xl leading-tight dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+                  <h2 className="mb-5 font-bold text-3xl leading-tight dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight xl:pb-10">
                     {heroTitle}
                   </h2>
-                  <div className="mb-12 text-base font-medium !leading-relaxed dark:text-white dark:opacity-90 sm:text-lg md:text-xl">
-                    <ReactMarkdown>{heroSubtitle || ""}</ReactMarkdown>
+                  <div className="prose mb-12 text-base font-medium !leading-relaxed dark:text-white dark:opacity-90 sm:text-lg md:text-xl">
+                    <div dangerouslySetInnerHTML={{ __html: heroSubtitle }} />
                   </div>
                 </motion.div>
                 <motion.div

@@ -93,6 +93,7 @@ query Page($locale: SiteLocale, $fallbackLocale: [SiteLocale!], $slug: String) {
         id
         heroSubtitle
         heroTitle
+        align
         displayOptions
         heroImage {
           responsiveImage {

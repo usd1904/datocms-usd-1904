@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@600&family=Poppins:wght@200;300;400;500;600&display=swap");
 @font-face {
   font-family: "FuturaMedium";
   src: url("/fonts/futuraMedium.woff2") format("woff2");
@@ -28,7 +27,7 @@
     --color-primary: #191919;
   }
   body {
-    font-family: "Hedvig Letters Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 }
 

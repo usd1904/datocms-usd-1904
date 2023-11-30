@@ -39,20 +39,6 @@ const Footer = ({ data, lng }: Props) => {
                   {data.layout!.footerSubtitle || ""}
                 </ReactMarkdown>
               </div>
-              <div className="flex items-center justify-center md:justify-start">
-                {data.layout!.socialMediaLinks.map((socialMedia) => {
-                  return (
-                    <a
-                      href={socialMedia.url}
-                      aria-label="social-link"
-                      className="mr-6 text-[#CED3F6] hover:text-primary"
-                      key={socialMedia.id}
-                    >
-                      <SvgRenderer url={socialMedia.icon.url} />
-                    </a>
-                  );
-                })}
-              </div>
             </div>
           </div>
 
@@ -80,25 +66,21 @@ const Footer = ({ data, lng }: Props) => {
             <div className="w-full">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 font-bold text-xl uppercase tracking-widest text-white">
-                  Legal
+                  Social
                 </h2>
-                <ul>
-                  <li>
-                    <a
-                      href="#"
-                      className="mb-4 inline-block text-base tracking-wider text-white underline hover:text-yellow"
-                    >
-                      Privacy Policy
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="mb-4 inline-block text-base tracking-wider text-white underline hover:text-yellow"
-                    >
-                      Cookie Policy
-                    </a>
-                  </li>
+                <ul className="flex justify-end">
+                  {data.layout!.socialMediaLinks.map((socialMedia) => {
+                    return (
+                      <a
+                        href={socialMedia.url}
+                        aria-label="social-link"
+                        className="ml-6 text-[#CED3F6] hover:text-primary"
+                        key={socialMedia.id}
+                      >
+                        <SvgRenderer url={socialMedia.icon.url} />
+                      </a>
+                    );
+                  })}
                 </ul>
               </div>
             </div>

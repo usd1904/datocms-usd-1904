@@ -31,34 +31,8 @@ export default async function RootLayout({
         id="iubenda"
         dangerouslySetInnerHTML={{
           __html: `
-            var _iub = _iub || [];
-            _iub.csConfiguration = {
-              "askConsentAtCookiePolicyUpdate":true,
-              "lang":"it",
-              "perPurposeConsent":true,
-              "siteId":3400480,
-              "cookiePolicyId":50674664,
-              "countryDetection":true,
-              "enableUspr":true,
-              purposes: "1, 3, 4",
-              "banner":{
-                "prependOnBody":true,
-                "acceptButtonCaptionColor":"#000000",
-                "acceptButtonColor":"#FFFFFF",
-                "acceptButtonDisplay":true,
-                "closeButtonRejects":true,
-                "customizeButtonCaptionColor":"#000000",
-                "customizeButtonColor":"#FFFFFF",
-                "customizeButtonDisplay":true,
-                "explicitWithdrawal":true,
-                "listPurposes":true,
-                "position":"float-bottom-center",
-                "rejectButtonCaptionColor":"#000000",
-                "rejectButtonColor":"#FFFFFF",
-                "rejectButtonDisplay":true,
-                "showPurposesToggles":true
-              }
-            }`,
+          var _iub = _iub || [];
+          _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"floatingPreferencesButtonDisplay":"bottom-right","perPurposeConsent":true,"siteId":3400480,"whitelabel":false,"cookiePolicyId":50674664,"lang":"it", "banner":{ "acceptButtonCaptionColor":"#FFFFFF","acceptButtonColor":"#0073CE","acceptButtonDisplay":true,"backgroundColor":"#FFFFFF","closeButtonRejects":true,"customizeButtonCaptionColor":"#4D4D4D","customizeButtonColor":"#DADADA","customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-bottom-right","textColor":"#000000" }}`,
         }}
       />
       <Script
@@ -67,14 +41,9 @@ export default async function RootLayout({
         src="https://cs.iubenda.com/autoblocking/3400480.js"
       />
       <Script
-        id="iub3"
-        type="text/javascript"
-        src="//cdn.iubenda.com/cs/gpp/stub.js"
-      />
-      <Script
         id="iub4"
         type="text/javascript"
-        src="//cdn.iubenda.com/cs/iubenda_cs.js"
+        src="//cdn.iubenda.com/cs/beta/iubenda_cs.js"
         async
       />
     </html>

@@ -223,6 +223,11 @@ query Page($locale: SiteLocale, $fallbackLocale: [SiteLocale!], $slug: String) {
     id
     label
     _modelApiKey
+    seo: _seoMetaTags {
+      attributes
+      content
+      tag
+    }
   }
   allPosts(
     filter: { title: { isBlank: "false" } }

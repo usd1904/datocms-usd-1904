@@ -20,7 +20,7 @@ const Footer = ({ data, lng }: Props) => {
   return (
     <footer className="color-white relative z-10 mx-auto flex w-full flex-col items-center justify-center border-t-2 border-white bg-black pt-16 text-center md:text-start lg:pt-24">
       <div className="container w-full">
-        <div className="flex w-full flex-col justify-between md:flex-row md:px-16">
+        <div className="flex w-full flex-col justify-between gap-12 md:flex-row md:px-16">
           <div className="w-full">
             <div className="mx- mb-12 lg:mb-16">
               <Link href={"/" + lng + "/home"} className="mb-8 inline-block">
@@ -61,7 +61,33 @@ const Footer = ({ data, lng }: Props) => {
               </div>
             </div>
           </div>
-
+          <div className="flex w-full md:text-end">
+            <div className="w-full">
+              <div className="mb-12 lg:mb-16">
+                <h2 className="mb-10 font-bold text-xl uppercase tracking-widest text-white">
+                  Legal
+                </h2>
+                <ul>
+                  <li>
+                    <a
+                      href="#"
+                      className="mb-4 inline-block text-base tracking-wider text-white underline hover:text-yellow"
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="mb-4 inline-block text-base tracking-wider text-white underline hover:text-yellow"
+                    >
+                      Cookie Policy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <div className="flex w-full md:text-end">
             <div className="w-full">
               <div className="mb-12 lg:mb-16">

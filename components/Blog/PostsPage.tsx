@@ -1,6 +1,6 @@
-import PageIndicatorList from '@/components/Blog/PageIndicatorList';
-import SingleBlog from '@/components/Blog/SingleBlog';
-import { PostRecord, PostsQuery, SiteLocale } from '@/graphql/generated';
+import PageIndicatorList from "@/components/Blog/PageIndicatorList";
+import SingleBlog from "@/components/Blog/SingleBlog";
+import { PostRecord, PostsQuery, SiteLocale } from "@/graphql/generated";
 
 type Props = {
   data: PostsQuery;
@@ -30,25 +30,25 @@ const PostsPage = ({ data, lng, page }: Props) => {
                 <a
                   href={
                     page - 1 === 1
-                      ? `/${lng}/posts`
+                      ? `/${lng}/articoli`
                       : `/${lng}/posts/page/${page - 1}`
                   }
                   className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
                 >
-                  Prev
+                  INDIETRO
                 </a>
               </li>
               <PageIndicatorList
                 lng={lng}
-                postCount={data['_allPostsMeta'].count}
+                postCount={data["_allPostsMeta"].count}
               />
-              {page * 9 <= data['_allPostsMeta'].count && (
+              {page * 9 <= data["_allPostsMeta"].count && (
                 <li className="mx-1">
                   <a
                     href={`/${lng}/posts/page/${page + 1}`}
                     className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
                   >
-                    Next
+                    AVANTI
                   </a>
                 </li>
               )}

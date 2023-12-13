@@ -42,7 +42,7 @@ const PostGridRenderer = ({ data, lng, postMeta }: Props) => {
                     href={`/${lng}/posts/page/2`}
                     className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
                   >
-                    Next
+                    AVANTI
                   </a>
                 </li>
               )}
